@@ -1,9 +1,11 @@
+@import './../../../../styles.scss';
+
+
+
 nav {
 width: 100%;
 padding: 32px;
-display: flex;
-justify-content: space-between;
-align-items: center;
+@include dFlex($jc: space-between);
 position: absolute;
 top: 0;
 left: 0;
@@ -15,9 +17,10 @@ left: 0;
     >div{
         width: 350px;
         display: flex;
+        align-items: center;
             >a{
                 &:hover{
-                    color: red;
+                    color: $dark_red;
                 }
             }
     }
@@ -27,14 +30,22 @@ left: 0;
 a{
     text-decoration: none;
     color: white;
+    font-family: 'Raleway';
 }
 
 .phone_btn{
-
-    
+    background-color: $dark_red; 
+    @include borderStyling(solid);    
     display: flex;
+    padding: 8px;
     align-items: center;
+    gap: 8px;
+    cursor: pointer;
 
+    &:hover{
+        background-color: rgb(220,0,0);
+        
+    }
      >img{
         width: 24px;
         height: 24px;
